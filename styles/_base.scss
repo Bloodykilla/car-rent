@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: $font-size--base;
+}
+
+p {
+  font-size: $font-size--base;
+  color: $color--black;
+  @include for-phone-only {
+    font-size: $font-size--small;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $color--black;
+  margin: 0;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+img,
+svg,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+//react slick-slider styles
+.slick-track {
+  @include for-phone-only {
+    margin: 0 !important;
+  }
+
+  @include for-tablet-portrait-up {
+    margin: 0 1 rem !important;
+  }
+
+  @include for-desktop-up {
+    margin: 0 4.375rem !important;
+  }
+}
+
+.slick-slide {
+  @include for-tablet-portrait-up {
+    width: calc(100% - 2rem);
+  }
+
+  @include for-desktop-up {
+    width: calc(100% - 4.375rem);
+  }
+}
+
+//react-datepicker styles
+.react-datepicker__day.react-datepicker__day--selected,
+.react-datepicker__day.react-datepicker__day--keyboard-selected {
+  background-color: $color--primary !important;
+}
+
+label {
+  @include for-phone-only {
+    font-size: $font-size--small;
+  }
+
+  @include for-tablet-portrait-up {
+    font-size: $font-size--base;
+  }
+}

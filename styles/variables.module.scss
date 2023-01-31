@@ -1,0 +1,32 @@
+@import "@/styles/breakpoint-mixins.scss";
+
+//Colors
+$color--dark-grey: #303030;
+$color--primary: #e32f33;
+$color--black: #000000;
+$color--yellow: #d99c00;
+$color--white: #ffffff;
+$color--light-white: #efedeb;
+$color--light-gray: #b0b0b0;
+
+//Font sizes
+$font-size--hero: 15rem;
+$font-size--large: 6rem;
+$font-size--big: 4rem;
+$font-size--semibig: 2.25rem;
+$font-size--medium: 1.5rem;
+$font-size--semimedium: 1.25rem;
+$font-size--base: 1rem;
+$font-size--small: 0.875rem;
+$font-size--tiny: 0.75rem;
+
+//Font weight
+$font-weight--bold: 700;
+$font-weight--medium: 500;
+$font-weight--regular: 400;
+
+//Borders
+$border-radius: 4px;
+
+//Transitions
+$transition--default: ease 0.2s;

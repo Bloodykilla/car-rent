@@ -1,38 +1,136 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+---
+
+## Git branches
+
+### Dev
+
+Create a copy of the `merge` branch
+
+(create branch by task name)
+
+When the job is done - create a pull request from `your branch` to the `merge` branch.
+
+delete your branch after pull request
+
+---
+
 ## Getting Started
 
-First, run the development server:
+Run the development server
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Run the storybook:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+yarn storybook
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Open [http://localhost:6006/](http://localhost:6006/) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Setup Prettier VSCode
 
-## Learn More
+VS Code -> `View` ->` Command Palette` then enter: `Format Document With`
+next `Configure Default Formatter`... then selected `Prettier - Code formatter`
 
-To learn more about Next.js, take a look at the following resources:
+### Snippets for VSCode
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Use to create the TypeScript React Function Page Page "`rcp`"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```json
+	"TypeScript React Function page": {
+		"prefix": "rcp",
+		"body": [
+			"import React from 'react';",
+			"import styles from './styles.module.scss';",
+			"",
+			"interface IndexProps {",
+			"",
+			"}",
+			"",
+			"const Index = ({}: IndexProps) => {",
+			"\t$1",
+			"",
+			"\treturn (<>$0</>);",
+			"}",
+			"export default Index;",
+			""
+		],
+		"description": "TypeScript React Function Page Page"
+	},
+```
 
-## Deploy on Vercel
+#### Use to create the TypeScript React Function Component "`rc`"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+		"TypeScript React Function Component": {
+		"prefix": "rc",
+		"body": [
+			"import React from 'react';",
+			"import styles from './styles.module.scss';",
+			"",
+			"interface ${TM_FILENAME_BASE}Props {",
+			"",
+			"}",
+			"",
+			"export const ${TM_FILENAME_BASE} = ({}: ${TM_FILENAME_BASE}Props) => {",
+			"\t$1",
+			"",
+			"\treturn (<>$0</>);",
+			"}",
+			""
+		],
+		"description": "TypeScript React Function Component"
+	},
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Use to create the TypeScript React stories Component "`rcs`"
+
+```json
+		"TypeScript React stories Component": {
+		"prefix": "rcs",
+		"body": [
+			"import React from 'react';",
+			"import { ComponentStory, ComponentMeta } from '@storybook/react';",
+			"import { ${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/} } from './${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/}';",
+			"",
+			"export default {",
+			"\ttitle: 'Components/${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/}',",
+			"\tcomponent: ${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/}",
+			"} as ComponentMeta<typeof ${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/}>;",
+			"",
+			"const Template: ComponentStory<typeof ${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/}> = (args) => (",
+			"\t<${TM_FILENAME_BASE/([^.]+).*/${1:/pascalcase}/} {...args} />",
+			");",
+			"",
+			"export const Props = Template.bind({});",
+			"Props.args = {",
+			"\t$1: $2",
+			"};",
+			""
+		],
+		"description": "TypeScript React stories Component"
+	},
+```
+
+#### Use to create the Interfaces from the file "`int`"
+
+```json
+	"Create Interfaces from file": {
+		"prefix": "int",
+		"body": [
+			"export interface ${TM_FILENAME_BASE}Interface {",
+			"\t$1",
+			"}",
+			""
+		],
+		"description": "Create Interfaces from file"
+	}
+
+```
