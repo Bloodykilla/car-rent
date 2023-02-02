@@ -1,0 +1,72 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  width: 100%;
+  max-width: $size--max-width;
+  margin: 0 auto;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.small {
+  @include for-phone-only {
+    padding: 2rem 1rem;
+  }
+  @include for-tablet-portrait-up {
+    padding: 2rem 3.75rem 5rem;
+  }
+  @include for-desktop-up {
+    padding: 2.5rem 7.5rem;
+  }
+}
+
+.medium {
+  @include for-phone-only {
+    padding: 2.5rem 1rem;
+  }
+  @include for-tablet-portrait-up {
+    padding: 2.5rem 3.75rem;
+  }
+  @include for-desktop-up {
+    padding: 5rem 7.5rem;
+  }
+}
+
+.large {
+  @include for-phone-only {
+    padding: 3.75rem 1rem;
+  }
+  @include for-tablet-portrait-up {
+    padding: 5rem 3.75rem;
+  }
+  @include for-desktop-up {
+    padding: 6.25rem 7.5rem;
+  }
+}
+
+.none {
+  @include for-phone-only {
+    padding: 0 1rem;
+  }
+  @include for-tablet-portrait-up {
+    padding: 0 3.75rem;
+  }
+  @include for-desktop-up {
+    padding: 0 7.5rem;
+  }
+}

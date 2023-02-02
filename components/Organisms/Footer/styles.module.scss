@@ -1,0 +1,142 @@
+@import "@/styles/variables.module.scss";
+
+.footer {
+  background-color: $color--grey;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include for-phone-only {
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+  }
+
+  @include for-tablet-portrait-up {
+    padding-block-start: 2.5rem;
+    padding-block-end: 2.5rem;
+  }
+}
+
+.topRow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: $color--white;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.nav {
+  @include for-desktop-up {
+    margin-inline-start: 12%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    li {
+      font-weight: $font-weight--semiBold;
+
+      @include for-phone-only {
+        margin-inline-end: 0.5rem;
+      }
+      @include for-tablet-portrait-up {
+        margin-inline-end: 1.5rem;
+      }
+
+      @include for-desktop-up {
+        margin-inline-end: 2rem;
+      }
+
+      &:last-child {
+        margin-inline-end: 0;
+      }
+    }
+  }
+}
+
+.contact {
+  a {
+    @include for-phone-only {
+      margin-inline-end: 0.5rem;
+    }
+    @include for-tablet-portrait-up {
+      margin-inline-end: 1.5rem;
+    }
+    @include for-desktop-up {
+      margin-inline-end: 2rem;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.indents {
+  @include for-phone-only {
+    margin-block-end: 0.75rem;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-block-end: 1.25rem;
+  }
+
+  @include for-desktop-up {
+    margin-block-end: 0;
+  }
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+
+  @include for-desktop-up {
+    margin-block-start: 1.625rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    li {
+      @include for-phone-only {
+        margin-inline-end: 0.5rem;
+        font-size: 10px;
+      }
+      @include for-tablet-portrait-up {
+        margin-inline-end: 2rem;
+        font-size: $font-size--tiny;
+      }
+
+      a {
+        color: $color--white;
+        opacity: 0.2;
+        &:hover {
+          opacity: 1;
+        }
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

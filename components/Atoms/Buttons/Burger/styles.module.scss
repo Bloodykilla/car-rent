@@ -1,0 +1,46 @@
+@import "@/styles/variables.module.scss";
+
+.burger {
+  display: block;
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+
+  margin: 0;
+  padding: 4px 0;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  .bar {
+    border-radius: $border-radius--large;
+    width: 24px;
+    height: 2px;
+    background-color: $color--grey;
+    display: block;
+    margin: 5px auto;
+    transition: $transition--default;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+.active {
+  .bar {
+    &:first-child {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+  }
+}

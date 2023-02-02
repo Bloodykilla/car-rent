@@ -7,6 +7,8 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  font-family: "Poppins";
+
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 
 p {
   font-size: $font-size--base;
-  color: $color--black;
+  color: $color--grey;
   @include for-phone-only {
     font-size: $font-size--small;
   }
@@ -25,12 +27,77 @@ h1,
 h2,
 h3,
 h4 {
-  color: $color--black;
+  color: $color--grey;
   margin: 0;
 }
 
+h1,
+h2 {
+  font-weight: $font-weight--bold;
+}
+
+h3,
+h4 {
+  font-weight: $font-weight--semiBold;
+}
+
+h1 {
+  @include for-phone-only {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+  }
+  @include for-tablet-portrait-up {
+    font-size: 3.25rem;
+    margin: 0 0 0.75rem;
+  }
+  @include for-desktop-up {
+    font-size: 5.75rem;
+    margin: 0 0 1rem;
+  }
+}
+
+h2 {
+  @include for-phone-only {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+  }
+  @include for-tablet-portrait-up {
+    font-size: 2rem;
+    margin: 0 0 2rem;
+  }
+  @include for-desktop-up {
+    font-size: 3.25rem;
+    margin: 0 0 1rem;
+  }
+}
+
+h3 {
+  @include for-phone-only {
+    font-size: 1.5rem;
+    margin: 0 0 0.75rem;
+  }
+  @include for-tablet-portrait-up {
+    font-size: 1.25rem;
+    margin: 0 0 0.75rem;
+  }
+  @include for-desktop-up {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  margin: 0 0 0.75rem;
+
+  @include for-phone-only {
+    font-size: $font-size--base;
+  }
+  @include for-tablet-portrait-up {
+    font-size: 1.25rem;
+  }
+}
+
 button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins";
 }
 
 img,
@@ -40,47 +107,17 @@ object {
   height: auto;
 }
 
-svg {
-  fill: currentColor;
-}
+a {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  transition: $transition--default;
 
-//react slick-slider styles
-.slick-track {
-  @include for-phone-only {
-    margin: 0 !important;
+  &:hover {
+    color: $color--primary;
   }
 
-  @include for-tablet-portrait-up {
-    margin: 0 1 rem !important;
-  }
-
-  @include for-desktop-up {
-    margin: 0 4.375rem !important;
-  }
-}
-
-.slick-slide {
-  @include for-tablet-portrait-up {
-    width: calc(100% - 2rem);
-  }
-
-  @include for-desktop-up {
-    width: calc(100% - 4.375rem);
-  }
-}
-
-//react-datepicker styles
-.react-datepicker__day.react-datepicker__day--selected,
-.react-datepicker__day.react-datepicker__day--keyboard-selected {
-  background-color: $color--primary !important;
-}
-
-label {
   @include for-phone-only {
     font-size: $font-size--small;
-  }
-
-  @include for-tablet-portrait-up {
-    font-size: $font-size--base;
   }
 }
