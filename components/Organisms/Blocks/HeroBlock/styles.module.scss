@@ -1,0 +1,119 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  max-width: $size--max-width;
+  margin: 0 auto;
+  display: flex;
+  background-color: $color--light-grey;
+  padding-inline-end: none;
+  flex-direction: column;
+
+  @include for-tablet-portrait-up {
+    padding: 5rem 5rem 1rem;
+  }
+
+  @include for-desktop-up {
+    overflow: hidden;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+.title {
+  text-align: center;
+
+  @include for-tablet-portrait-up {
+    width: 50%;
+    margin-block-end: 1rem;
+  }
+
+  @include for-desktop-up {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.leftBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  h4 {
+    font-weight: $font-weight--regular;
+    text-align: center;
+    margin-block-start: 0;
+    @include for-phone-only {
+      margin-block-end: 1.5rem;
+    }
+
+    @include for-tablet-portrait-up {
+      max-width: 400px;
+      margin-block-end: 2.5rem;
+    }
+
+    @include for-desktop-up {
+      text-align: left;
+      max-width: 500px;
+    }
+  }
+
+  @include for-phone-only {
+    margin-bottom: 0.75rem;
+    padding: 0 1rem;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-bottom: 2.5rem;
+  }
+
+  @include for-desktop-up {
+    text-align: left;
+    align-items: flex-start;
+    width: 50%;
+    padding: 117px 0 117px 120px;
+  }
+}
+
+.rightBlock {
+  width: 100%;
+  background-image: url("/images/bg.png");
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  height: auto;
+
+  padding: 3rem 1rem;
+
+  @include for-desktop-up {
+    width: 50%;
+    padding: 0;
+    margin: 0 120px 16px 0;
+  }
+}
+
+.carContainer {
+  @include for-phone-only {
+    height: 142px;
+  }
+
+  @include for-tablet-portrait-up {
+    height: 312px;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    width: 866px;
+    height: 432px;
+    transform: translate3d(8%, 30%, 0);
+  }
+
+  @include for-med-desktop-up {
+    transform: translate3d(18%, 26%, 0);
+  }
+}
+
+.car {
+  object-fit: contain;
+}
