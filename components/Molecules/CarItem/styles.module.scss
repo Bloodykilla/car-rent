@@ -1,0 +1,62 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem;
+  border-radius: $border-radius--regular;
+  background-color: $color--light-grey;
+
+  &:hover {
+    background-color: $color--white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    .priceContainer {
+      color: $color--grey;
+    }
+
+    .price {
+      color: $color--primary;
+    }
+  }
+}
+
+.label {
+  @include for-phone-only {
+    margin-block-end: 1.25rem;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-block-end: 1rem;
+  }
+}
+
+.image {
+  margin: 0 auto 20px;
+}
+
+.priceContainer {
+  color: $color--half-grey;
+  margin-inline-start: auto;
+
+  .price {
+    position: relative;
+    color: $color--grey;
+    font-size: 1.75rem;
+    padding-inline-start: 14px;
+
+    @include for-phone-only {
+      font-size: 1.5rem;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "€";
+      font-size: $font-size--base;
+    }
+  }
+}
