@@ -1,6 +1,8 @@
 import { Button } from "@/components/Atoms/Buttons/Button/Button";
 import { Container } from "@/components/Atoms/Container/Container";
 import { Title } from "@/components/Atoms/Title/Title";
+import { BenefitBlock } from "@/components/Organisms/Blocks/BenefitBlock/BenefitBlock";
+import { LocationBlock } from "@/components/Organisms/Blocks/LocationBlock/LocationBlock";
 import { VehicleBlock } from "@/components/Organisms/Blocks/VehicleBlock/VehicleBlock";
 import { TemplateMain } from "@/components/Templates/TemplateMain/TemplateMain";
 
@@ -29,6 +31,8 @@ export default function Home() {
         </div>
       </Container>
       <VehicleBlock />
+      <LocationBlock />
+      <BenefitBlock />
     </TemplateMain>
   );
 }
