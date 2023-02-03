@@ -40,7 +40,7 @@ export const Navbar = ({}: NavbarProps) => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link href={"/"}>Rent</Link>
+              <Link href={"/rent"}>Rent</Link>
             </li>
             <li>
               <Link href={"/"}>Useful Information</Link>
