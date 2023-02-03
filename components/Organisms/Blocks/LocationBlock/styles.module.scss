@@ -1,0 +1,105 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  background-color: $color--grey;
+
+  h2 {
+    color: $color--white;
+  }
+}
+
+.title {
+  @include for-tablet-portrait-up {
+    margin-block-end: 2.5rem;
+  }
+
+  @include for-desktop-up {
+    max-width: 700px;
+  }
+}
+
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: $border-radius--regular;
+  width: 100%;
+  border: 2px solid $color--border-white;
+
+  @include for-phone-only {
+    padding: 20px 16px;
+    margin-block-end: 0.5rem;
+  }
+
+  @include for-tablet-portrait-up {
+    padding: 20px 40px;
+    margin-block-end: 1.25rem;
+  }
+
+  @include for-desktop-up {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  h2 {
+    margin-block-end: 1rem;
+    @include for-desktop-up {
+      margin: 0;
+    }
+  }
+}
+
+.locationSelect {
+  display: inline-block;
+
+  @include for-desktop-up {
+    padding-block-start: 15px;
+    width: 70%;
+  }
+}
+
+.scroll {
+  overflow-y: scroll;
+
+  /* Scroll styling */
+
+  /* Firefox */
+  scrollbar-color: $color--primary $color--white;
+  scrollbar-width: thin;
+
+  /* Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: 2px;
+    border-radius: $border-radius--regular;
+    background-color: $color--white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color--primary;
+    border-radius: $border-radius--regular;
+  }
+
+  @include for-phone-only {
+    max-height: 128px;
+  }
+
+  @include for-tablet-portrait-up {
+    max-height: 111px;
+  }
+
+  @include for-desktop-up {
+    max-height: 120px;
+  }
+}
+
+.locationItem {
+  margin: 0 8px 8px 0;
+
+  &:last-child {
+    margin: 0 0 8px;
+  }
+}
