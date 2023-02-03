@@ -1,0 +1,55 @@
+@import "@/styles/variables.module.scss";
+
+.grid {
+  display: grid;
+
+  @include for-phone-only {
+    grid-gap: 0.5rem;
+  }
+
+  @include for-tablet-portrait-up {
+    grid-gap: 1.25rem;
+  }
+}
+
+.col-2 {
+  grid-template-columns: 1fr;
+
+  @include for-desktop-up {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.col-3 {
+  @include for-phone-only {
+    grid-template-columns: 1fr;
+  }
+  @include for-tablet-portrait-up {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include for-desktop-up {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.flex {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  @include for-phone-only {
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  @include for-tablet-portrait-up {
+    align-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+
+  @include for-desktop-up {
+    justify-content: center;
+  }
+}
