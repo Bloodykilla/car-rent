@@ -1,3 +1,4 @@
+import { ActiveLink } from "@/components/Atoms/ActiveLink/ActiveLink";
 import { Burger } from "@/components/Atoms/Buttons/Burger/Burger";
 import { Button } from "@/components/Atoms/Buttons/Button/Button";
 import { Container } from "@/components/Atoms/Container/Container";
@@ -36,17 +37,25 @@ export const Navbar = ({}: NavbarProps) => {
           onClick={() => openMenuHandler()}
           isMenuOpen={openMenu}
         />
-        <Logo className={styles.logo} />
+        <Logo />
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link href={"/rent"}>Rent</Link>
+              <ActiveLink href={"/rent"} label={"Rent"} color={"grey"} />
             </li>
             <li>
-              <Link href={"/"}>Useful Information</Link>
+              <ActiveLink
+                href={"/useful-information"}
+                label={"Useful Information"}
+                color={"grey"}
+              />
             </li>
             <li>
-              <Link href={"/"}>Transfers</Link>
+              <ActiveLink
+                href={"/transfers"}
+                label={"Transfers"}
+                color={"grey"}
+              />
             </li>
           </ul>
         </nav>
@@ -55,7 +64,7 @@ export const Navbar = ({}: NavbarProps) => {
             {"+ 43 676 373 0 663"}
           </Link>
 
-          <Button href={"/"} isBlueBorder={true} type={"outline"}>
+          <Button href={"/car-order"} isBlueBorder={true} type={"outline"}>
             {"Manage booking"}
           </Button>
         </div>
@@ -74,19 +83,28 @@ export const Navbar = ({}: NavbarProps) => {
             <nav className={styles.mobileNav}>
               <ul>
                 <li>
-                  <Link onClick={() => openMenuHandler()} href={"/"}>
-                    Rent
-                  </Link>
+                  <ActiveLink
+                    onClick={() => openMenuHandler()}
+                    href={"/rent"}
+                    label={"Rent"}
+                    color={"grey"}
+                  />
                 </li>
                 <li>
-                  <Link onClick={() => openMenuHandler()} href={"/"}>
-                    Useful Information
-                  </Link>
+                  <ActiveLink
+                    onClick={() => openMenuHandler()}
+                    href={"/useful-information"}
+                    label={"Useful Information"}
+                    color={"grey"}
+                  />
                 </li>
                 <li>
-                  <Link onClick={() => openMenuHandler()} href={"/"}>
-                    Transfers
-                  </Link>
+                  <ActiveLink
+                    onClick={() => openMenuHandler()}
+                    href={"/transfers"}
+                    label={"Transfers"}
+                    color={"grey"}
+                  />
                 </li>
               </ul>
             </nav>

@@ -1,5 +1,6 @@
 import { Title } from "@/components/Atoms/Title/Title";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 interface CarItemProps {
@@ -18,7 +19,10 @@ export const CarItem = ({
   className,
 }: CarItemProps) => {
   return (
-    <a className={[styles.container, className].join(" ")}>
+    <Link
+      href={"/car-order"}
+      className={[styles.container, className].join(" ")}
+    >
       {label && (
         <Title
           className={styles.label}
@@ -46,6 +50,6 @@ export const CarItem = ({
           /day
         </span>
       )}
-    </a>
+    </Link>
   );
 };
