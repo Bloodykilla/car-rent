@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-interface InfoItemProps {
+interface InfoCardProps {
   href: string;
   title: string;
   excerpt: string;
@@ -13,7 +13,7 @@ interface InfoItemProps {
   className?: string;
 }
 
-export const InfoItem = ({
+export const InfoCard = ({
   href,
   title,
   excerpt,
@@ -21,7 +21,7 @@ export const InfoItem = ({
   alt,
   date,
   className,
-}: InfoItemProps) => {
+}: InfoCardProps) => {
   return (
     <>
       {href && (

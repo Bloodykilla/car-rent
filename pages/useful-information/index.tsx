@@ -2,7 +2,7 @@ import { Container } from "@/components/Atoms/Container/Container";
 import { Grid } from "@/components/Atoms/Grid/Grid";
 import { ImageBanner } from "@/components/Atoms/ImageBanner/ImageBanner";
 import { Title } from "@/components/Atoms/Title/Title";
-import { InfoItem } from "@/components/Molecules/InfoItem/InfoItem";
+import { InfoCard } from "@/components/Molecules/InfoCard/InfoCard";
 import { TemplateMain } from "@/components/Templates/TemplateMain/TemplateMain";
 import styles from "./styles.module.scss";
 
@@ -20,7 +20,7 @@ const Index = ({}: IndexProps) => {
           align={"center"}
         />
         <Grid display="grid" col="col-3">
-          <InfoItem
+          <InfoCard
             thumbnail={"/images/banner.png"}
             href={"/useful-information/post-1"}
             title={"TOP-5 attractions in Vienna"}
@@ -29,14 +29,14 @@ const Index = ({}: IndexProps) => {
             }
             date={"Jan 10, 2023"}
           />
-          <InfoItem
+          <InfoCard
             thumbnail={"/images/banner.png"}
             href={"/"}
             title={"Everything about renting in Careta"}
             excerpt={"Frequently asked questions about car rental"}
             date={"Jan 10, 2023"}
           />
-          <InfoItem
+          <InfoCard
             thumbnail={"/images/banner.png"}
             href={"/"}
             title={"Parking tickets in Vienna"}
@@ -45,7 +45,7 @@ const Index = ({}: IndexProps) => {
             }
             date={"Jan 10, 2023"}
           />
-          <InfoItem
+          <InfoCard
             thumbnail={"/images/banner.png"}
             href={"/"}
             title={"TOP-5 attractions in Vienna"}
@@ -54,14 +54,14 @@ const Index = ({}: IndexProps) => {
             }
             date={"Jan 10, 2023"}
           />
-          <InfoItem
+          <InfoCard
             thumbnail={"/images/banner.png"}
             href={"/"}
             title={"Everything about renting in Careta"}
             excerpt={"Frequently asked questions about car rental"}
             date={"Jan 10, 2023"}
           />
-          <InfoItem
+          <InfoCard
             thumbnail={"/images/banner.png"}
             href={"/"}
             title={"Parking tickets in Vienna"}
