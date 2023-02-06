@@ -1,0 +1,19 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  h4 {
+    font-weight: $font-weight--regular;
+  }
+
+  p {
+    margin: 0.75rem 0;
+
+    @include for-desktop-up {
+      margin: 1rem 0;
+    }
+  }
+
+  a {
+    color: $color--primary;
+  }
+}

@@ -34,7 +34,7 @@ export const BenefitBlock = ({ className }: BenefitBlockProps) => {
           alt={""}
           title={"Included in cost"}
           description={
-            "Payment of roads in Austria, navigator, travel to neighboring countries, additional driver, unlimited mileage, car delivery to a hotel or airport in Vienna"
+            "Payment of roads in Austria, navigator, travel to neighboring countries, additional driver, car delivery to a hotel or airport in Vienna"
           }
         />
         <BenefitCard

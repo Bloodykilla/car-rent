@@ -34,13 +34,13 @@
   border-color: $color--white;
 
   &.blueBorder {
-    color: $color--primary;
-    border-color: $color--primary;
+    color: $color--dark-blue;
+    border-color: $color--dark-blue;
   }
 
   &:hover {
-    border-color: $color--dark-blue;
-    color: $color--dark-blue;
+    border-color: $color--primary;
+    color: $color--primary;
     transition: $transition--default;
   }
 }

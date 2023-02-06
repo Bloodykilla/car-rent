@@ -22,7 +22,7 @@ export const HeroBlock = ({}: HeroBlockProps) => {
           assistance..."
         />
 
-        <Button href={"/rent"} type={"fill"}>
+        <Button href={"/car-order"} type={"fill"}>
           View vehicle types
         </Button>
       </div>

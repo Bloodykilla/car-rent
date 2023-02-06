@@ -94,8 +94,9 @@
 }
 
 .carContainer {
+  position: relative;
   @include for-phone-only {
-    height: 142px;
+    height: 266px;
   }
 
   @include for-tablet-portrait-up {
@@ -116,4 +117,5 @@
 
 .car {
   object-fit: contain;
+
 }

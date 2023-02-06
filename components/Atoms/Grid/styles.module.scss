@@ -10,6 +10,10 @@
   @include for-tablet-portrait-up {
     grid-gap: 1.25rem;
   }
+
+  @include for-desktop-up {
+    grid-auto-rows: 1fr;
+  }
 }
 
 .col-2 {

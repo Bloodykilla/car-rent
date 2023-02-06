@@ -1,0 +1,86 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  border-radius: 8px;
+
+  p:last-child {
+    margin-block-end: 0;
+  }
+
+  h2 {
+    margin-block-end: 0;
+    @include for-phone-only {
+      text-align: center;
+    }
+
+    @include for-tablet-portrait-up {
+      text-align: center;
+    }
+
+    @include for-desktop-up {
+      text-align: left;
+    }
+  }
+
+  &:first-child {
+    margin-block-end: 1.25rem;
+    @include for-desktop-up {
+      margin-block-end: 0;
+    }
+  }
+}
+
+.border {
+  display: block;
+  width: 100%;
+
+  @include for-phone-only {
+    margin-block-end: 0.625rem;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-block-end: 2.5rem;
+  }
+}
+
+.index {
+  font-weight: $font-weight--semiBold;
+  @include for-phone-only {
+    font-size: 1.5rem;
+  }
+
+  @include for-tablet-portrait-up {
+    font-size: 1.75rem;
+  }
+}
+
+.iconContainer {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 1.25rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+
+  @include for-phone-only {
+    height: 200px;
+    margin-block-start: 1.25rem;
+  }
+
+  @include for-tablet-portrait-up {
+    height: 363px;
+    margin-block-start: 2.5rem;
+  }
+}
+
+.image {
+  border-radius: $border-radius--regular;
+  object-fit: cover;
+}

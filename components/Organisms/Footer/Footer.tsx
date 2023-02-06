@@ -1,3 +1,4 @@
+import { ActiveLink } from "@/components/Atoms/ActiveLink/ActiveLink";
 import { Container } from "@/components/Atoms/Container/Container";
 import { Logo } from "@/components/Icons/Logo/Logo";
 import Link from "next/link";
@@ -21,13 +22,25 @@ export const Footer = ({ className }: FooterProps) => {
           <nav className={[styles.nav, styles.indents].join(" ")}>
             <ul>
               <li>
-                <Link href={"/"}>About Us</Link>
+                <ActiveLink
+                  href={"/about"}
+                  label={"About Us"}
+                  color={"white"}
+                />
               </li>
               <li>
-                <Link href={"/"}>Useful Information</Link>
+                <ActiveLink
+                  href={"/useful-information"}
+                  label={"Useful Information"}
+                  color={"white"}
+                />
               </li>
               <li>
-                <Link href={"/"}>Transfers</Link>
+                <ActiveLink
+                  href={"/transfers"}
+                  label={"Transfers"}
+                  color={"white"}
+                />
               </li>
             </ul>
           </nav>
