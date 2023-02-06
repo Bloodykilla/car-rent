@@ -11,7 +11,12 @@ interface BenefitBlockProps {
 export const BenefitBlock = ({ className }: BenefitBlockProps) => {
   return (
     <Container display={"flex"} verticalIndent={"medium"}>
-      <Title tag={"h2"} align={"center"} content={"Benefits of car rental"} />
+      <Title
+        className={styles.title}
+        tag={"h2"}
+        align={"center"}
+        title={"Benefits of car rental"}
+      />
       <Grid className={styles.grid} display={"flex"}>
         <BenefitCard
           icon={""}

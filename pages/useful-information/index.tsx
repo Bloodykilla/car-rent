@@ -4,6 +4,7 @@ import { ImageBanner } from "@/components/Atoms/ImageBanner/ImageBanner";
 import { Title } from "@/components/Atoms/Title/Title";
 import { InfoItem } from "@/components/Molecules/InfoItem/InfoItem";
 import { TemplateMain } from "@/components/Templates/TemplateMain/TemplateMain";
+import styles from "./styles.module.scss";
 
 interface IndexProps {}
 
@@ -12,11 +13,16 @@ const Index = ({}: IndexProps) => {
     <TemplateMain>
       <ImageBanner thumbnail={null} alt={null} />
       <Container display="block" verticalIndent="medium">
-        <Title content={"Useful information"} tag={"h2"} align={"center"} />
+        <Title
+          className={styles.title}
+          title={"Useful information"}
+          tag={"h1"}
+          align={"center"}
+        />
         <Grid display="grid" col="col-3">
           <InfoItem
             thumbnail={"/images/banner.png"}
-            href={"/useful-information/slug"}
+            href={"/useful-information/post-1"}
             title={"TOP-5 attractions in Vienna"}
             excerpt={
               "You are going on a sightseeing tour or planning an independent trip to Vienna?"

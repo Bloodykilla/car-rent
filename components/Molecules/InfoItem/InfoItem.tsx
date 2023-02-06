@@ -37,7 +37,7 @@ export const InfoItem = ({
             </span>
           )}
           <span className={styles.textContainer}>
-            {title && <Title tag="h3" content={title} align={"left"} />}
+            {title && <Title tag="h3" title={title} align={"left"} />}
             {excerpt && <p>{excerpt}</p>}
             {date && <span className={styles.date}>{date}</span>}
           </span>

@@ -1,0 +1,24 @@
+@import "@/styles/variables.module.scss";
+
+.firstItem {
+  height: auto;
+}
+
+.grid {
+  gap: 1.25rem;
+}
+
+.bottomText {
+  max-width: 996px;
+  margin: 2.5rem auto 0;
+
+  text-align: left;
+
+  @include for-desktop-up {
+    text-align: center;
+  }
+
+  h4 {
+    margin: 0;
+  }
+}
