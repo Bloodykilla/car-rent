@@ -1,11 +1,11 @@
 @import "@/styles/variables.module.scss";
 
-.grid {
+.title {
   @include for-phone-only {
-    padding-block-start: 0.5rem;
+    margin-block-end: 2rem;
   }
 
   @include for-tablet-portrait-up {
-    padding-block-start: 1.5rem;
+    margin-block-end: 2.5rem;
   }
 }

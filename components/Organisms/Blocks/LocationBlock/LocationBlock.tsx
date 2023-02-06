@@ -126,7 +126,7 @@ const LocationSelector = ({
 }: LocationSelectorProps) => {
   return (
     <div className={styles.locationContainer}>
-      <Title tag={"h2"} align={"left"} content={title} />
+      <Title tag={"h2"} align={"left"} title={title} />
       <div
         className={[
           styles.locationSelect,
@@ -159,7 +159,7 @@ export const LocationBlock = ({}: LocationBlockProps) => {
         className={styles.title}
         tag={"h2"}
         align={"center"}
-        content={"We are based in Vienna but we also deliver to:"}
+        title={"We are based in Vienna but we also deliver to:"}
       />
       <LocationSelector
         path={"countries"}

@@ -10,15 +10,16 @@ export const HeroBlock = ({}: HeroBlockProps) => {
     <div className={styles.container}>
       <div className={styles.leftBlock}>
         <Title
+          isHeroTitle={true}
           className={styles.title}
-          content={"Car Rental in Vienna"}
+          title={"Car Rental in Vienna"}
           tag={"h1"}
           align={"left"}
         />
         <Title
           tag={"h4"}
           align={"left"}
-          content="    We support you throughout your trip, whenever and wherever you need
+          title="We support you throughout your trip, whenever and wherever you need
           assistance..."
         />
 

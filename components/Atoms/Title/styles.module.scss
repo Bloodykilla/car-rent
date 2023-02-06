@@ -7,3 +7,21 @@
 .left {
   text-align: left;
 }
+
+.heroTitle {
+  @include for-phone-only {
+    line-height: 2.5rem;
+    font-size: 2.5rem;
+    margin: 0.25rem 0 0.75rem;
+  }
+  @include for-tablet-portrait-up {
+    line-height: 4rem;
+    font-size: 3.25rem;
+    margin: 0 0 0.75rem;
+  }
+  @include for-desktop-up {
+    line-height: 6.5rem;
+    font-size: 5.75rem;
+    margin: 0 0 1rem;
+  }
+}

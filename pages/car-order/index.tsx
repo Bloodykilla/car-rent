@@ -7,7 +7,7 @@ interface IndexProps {}
 const Index = ({}: IndexProps) => {
   return (
     <TemplateMain>
-      <Container display="block" verticalIndent="medium">
+      <Container display="block" verticalIndent="none">
         <CardOrderBlock />
       </Container>
     </TemplateMain>

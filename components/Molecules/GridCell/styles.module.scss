@@ -3,11 +3,13 @@
 .container {
   border-radius: 8px;
 
+  display: flex;
+  flex-direction: column;
   p:last-child {
     margin-block-end: 0;
   }
 
-  h2 {
+  h1 {
     margin-block-end: 0;
     @include for-phone-only {
       text-align: center;
@@ -65,18 +67,26 @@
   margin-block-end: 1.25rem;
 }
 
+.markdown {
+  margin-block-end: 1.25rem;
+
+  @include for-desktop-up {
+    margin-block-end: 2.5rem;
+  }
+}
+
 .imageContainer {
   position: relative;
   width: 100%;
 
+  margin-block-start: auto;
+
   @include for-phone-only {
     height: 200px;
-    margin-block-start: 1.25rem;
   }
 
   @include for-tablet-portrait-up {
     height: 363px;
-    margin-block-start: 2.5rem;
   }
 }
 

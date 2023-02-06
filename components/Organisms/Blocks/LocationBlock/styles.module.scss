@@ -9,6 +9,9 @@
 }
 
 .title {
+  @include for-phone-only {
+    margin-block-end: 2rem;
+  }
   @include for-tablet-portrait-up {
     margin-block-end: 2.5rem;
   }
