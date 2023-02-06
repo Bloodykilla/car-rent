@@ -1,0 +1,37 @@
+@import "@/styles/variables.module.scss";
+
+.container {
+  width: fit-content;
+}
+
+.grey {
+  color: $color--grey;
+}
+
+.white {
+  color: $color--white;
+}
+
+.lightGrey {
+  color: $color--light-grey;
+}
+
+.active {
+  color: $color--primary;
+}
+
+.border {
+  width: 100%;
+  --s: 9px; //space between dashes
+
+  height: 4px;
+  background: radial-gradient(circle closest-side, $color--primary 98%, #0000) 0
+      0 / var(--s) 100%,
+    linear-gradient(90deg, $color--primary 50%, #0000 0) calc(var(--s) / 2) 0 /
+      calc(2 * var(--s)) 100%;
+
+  @include for-desktop-up {
+    height: 2px;
+    --s: 5px;
+  }
+}
