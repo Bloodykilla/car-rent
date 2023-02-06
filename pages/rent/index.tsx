@@ -15,20 +15,25 @@ const Index = ({}: IndexProps) => {
       <Container display="flex" flexDirection="col" verticalIndent="medium">
         <Title
           className={styles.title}
-          content="Rent a car in Austria"
-          tag={"h2"}
+          title="Rent a car in Austria"
+          tag={"h1"}
           align={"center"}
         />
         <p className={styles.description}>
-          Decided to take a trip to breathtaking Austria? We advise you to rent
+          {`Decided to take a trip to breathtaking Austria? We advise you to rent
           a car with which you can spend your vacation as comfortably as
           possible, travel and visit beautiful and exciting places. Don't know
           where to rent a car in Austria? Please contact CARETA. With us, each
           client will be able to choose the right car at the most affordable
           prices. The companies managers have an individual approach to each
-          client and will arrange a car rental in the shortest possible time.
+          client and will arrange a car rental in the shortest possible time.`}
         </p>
-        <Title tag={'h4'} content={'Welcome to our company!'} align={'centers'} />
+        <Title
+          className={styles.subTitle}
+          tag={"h4"}
+          title={"Welcome to our company!"}
+          align={"center"}
+        />
       </Container>
       <VehicleBlock />
       <LocationBlock />

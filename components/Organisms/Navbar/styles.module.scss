@@ -2,19 +2,22 @@
 
 .wrapper {
   transition: $transition--default;
-  background-color: $color--light-grey;
   z-index: 999;
   position: sticky;
   top: 0;
 }
 
 .scrollChanged {
-  background-color: $color--white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  .container {
+    background-color: $color--white;
+  }
 }
 
 .container {
   height: 5.5rem;
+  background-color: $color--light-grey;
 
   @include for-desktop-up {
     justify-content: space-between;
@@ -85,7 +88,8 @@
   left: 0;
   right: 0;
   width: 100vw;
-  height: 100vh;
+  //apply dynamic viewport height for avoiding bottom bar spacing (Safari)
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
@@ -98,8 +102,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: inherit;
-
   z-index: 10;
   transform: translate3D(-100%, 0, 0);
   transition: $transition--default;
@@ -122,16 +124,17 @@
 .showMenu {
   overflow: hidden;
   margin: 0;
-
-  height: 100vh;
+  //apply dynamic viewport height for avoiding bottom bar spacing (Safari)
+  height: 100dvh;
+  //disable touch event if menu open
+  -ms-touch-action: none;
+  touch-action: none;
 
   .backdrop {
     z-index: 1;
     transition: $transition--default;
     visibility: visible;
     opacity: 1;
-    //specify bottom space fill for Safari (IOS)
-    min-height: -webkit-fill-available;
   }
   .modalMenu {
     transform: translate3D(0, 0, 0);

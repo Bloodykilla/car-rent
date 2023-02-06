@@ -13,7 +13,7 @@ interface GridCellProps {
   description?: string;
   thumbnail?: string;
   alt?: string;
-  isH2?: boolean;
+  isPageTitle?: boolean;
   hasArrowBorder?: boolean;
   className?: string;
 }
@@ -26,7 +26,7 @@ export const GridCell = ({
   description,
   thumbnail,
   alt,
-  isH2 = false,
+  isPageTitle = false,
   hasArrowBorder = false,
   hasIcon = false,
   className,
@@ -91,11 +91,16 @@ export const GridCell = ({
           {index && !icon && <span className={styles.index}>{index}</span>}
         </div>
       )}
-      <Title tag={isH2 ? "h2" : "h3"} content={title} align={"left"} />
-      {description && <Markdown content={description} />}
+      <Title tag={isPageTitle ? "h1" : "h3"} title={title} align={"left"} />
+      {description && <Markdown className={styles.markdown} content={description} />}
       {thumbnail && (
         <div className={styles.imageContainer}>
-          <Image className={styles.image} fill={true} src={thumbnail} alt={alt ?? title} />
+          <Image
+            className={styles.image}
+            fill={true}
+            src={thumbnail}
+            alt={alt ?? title}
+          />
         </div>
       )}
     </div>

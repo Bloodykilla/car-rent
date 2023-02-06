@@ -9,7 +9,7 @@ interface VehicleBlockProps {}
 export const VehicleBlock = ({}: VehicleBlockProps) => {
   return (
     <Container display={"block"} verticalIndent={"medium"}>
-      <Title tag={"h2"} align={"center"} content={"Select vehicle type"} />
+      <Title className={styles.title} tag={"h2"} align={"center"} title={"Select vehicle type"} />
       <Grid className={styles.grid} display={"flex"}>
         <CarItem
           className={styles.item}

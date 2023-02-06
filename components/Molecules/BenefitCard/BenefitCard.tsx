@@ -36,7 +36,7 @@ export const BenefitCard = ({
         />
       </div>
 
-      {title && <Title content={title} tag={"h4"} align={"center"} />}
+      {title && <Title title={title} tag={"h4"} align={"center"} />}
       {description && <p className={styles.description}>{description}</p>}
     </div>
   );

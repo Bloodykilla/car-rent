@@ -27,7 +27,7 @@ export const CarItem = ({
         <Title
           className={styles.label}
           tag="h3"
-          content={label}
+          title={label}
           align={"left"}
         />
       )}
