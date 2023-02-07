@@ -35,7 +35,7 @@ const Index = ({}: IndexProps) => {
             }
             thumbnail={
               process.env.NEXT_PUBLIC_API +
-              "uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
+              "/uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
             }
           />
           <GridCell
@@ -49,7 +49,7 @@ const Index = ({}: IndexProps) => {
             }
             thumbnail={
               process.env.NEXT_PUBLIC_API +
-              "uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
+              "/uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
             }
           />
           <GridCell
@@ -63,7 +63,7 @@ const Index = ({}: IndexProps) => {
             }
             thumbnail={
               process.env.NEXT_PUBLIC_API +
-              "uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
+              "/uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
             }
           />
         </Grid>
