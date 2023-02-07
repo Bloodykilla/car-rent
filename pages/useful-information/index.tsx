@@ -33,7 +33,7 @@ const Index = ({}: IndexProps) => {
             thumbnail={"/images/banner.png"}
             href={"/"}
             title={"Everything about renting in Careta"}
-            excerpt={"Frequently asked questions about car rental"}
+            excerpt={"Frequently asked questions about car rental Frequently asked questions about car rental "}
             date={"Jan 10, 2023"}
           />
           <InfoCard
