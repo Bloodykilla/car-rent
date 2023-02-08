@@ -30,6 +30,7 @@ export const HeroBlock = ({}: HeroBlockProps) => {
       <div className={styles.rightBlock}>
         <div className={styles.carContainer}>
           <Image
+            priority={true}
             className={styles.car}
             fill={true}
             src={"/images/hero-car.png"}

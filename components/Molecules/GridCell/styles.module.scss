@@ -24,6 +24,10 @@
     }
   }
 
+  h3 {
+    margin: 0;
+  }
+
   &:first-child {
     margin-block-end: 1.25rem;
     @include for-desktop-up {

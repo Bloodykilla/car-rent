@@ -26,9 +26,9 @@ export const BenefitCard = ({
         className={styles.iconContainer}
       >
         <Image
-          className={styles.icon}
           width={24}
           height={24}
+          className={styles.icon}
           src={
             icon ? process.env.NEXT_PUBLIC_API + icon : "/images/icons/taxi.svg"
           }
@@ -36,7 +36,14 @@ export const BenefitCard = ({
         />
       </div>
 
-      {title && <Title title={title} tag={"h4"} align={"center"} />}
+      {title && (
+        <Title
+          className={styles.title}
+          title={title}
+          tag={"h4"}
+          align={"center"}
+        />
+      )}
       {description && <p className={styles.description}>{description}</p>}
     </div>
   );

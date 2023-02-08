@@ -1,74 +1,111 @@
 import { Container } from "@/components/Atoms/Container/Container";
 import { Grid } from "@/components/Atoms/Grid/Grid";
 import { ImageBanner } from "@/components/Atoms/ImageBanner/ImageBanner";
+import { Markdown } from "@/components/Atoms/Markdown/Markdown";
+import { Title } from "@/components/Atoms/Title/Title";
 import { GridCell } from "@/components/Molecules/GridCell/GridCell";
 import { TemplateMain } from "@/components/Templates/TemplateMain/TemplateMain";
+import { fetchPostById, fetchPostBySlug } from "api/http";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 import styles from "./styles.module.scss";
 
-interface IndexProps {}
+interface IndexProps {
+  id: string;
+}
 
-const CONTENT_ITEMS_DATA = [{}];
-
-const Index = ({}: IndexProps) => {
-  const pageDescription = `Every year Vienna enchants millions of tourists with majestic architecture, magnificent palaces, elegant parks, museums and theaters. Vienna was the heart of the Habsburg Empire, and to this day is not only the capital of Austria, but also the main cultural center of the country. In this article, we will tell you about the most important sights of the city, which for several years in a row has rightly been called the most comfortable city for living.`;
+const Index = ({ id }: IndexProps) => {
+  const { isLoading, isError, data } = useQuery("post", () =>
+    fetchPostById(`${id}`)
+  );
 
   return (
     <TemplateMain>
-      <ImageBanner thumbnail={null} alt={null} />
-      <Container display={"block"} verticalIndent={"medium"}>
-        <Grid className={styles.grid} display={"grid"} col={"col-2"}>
-          <GridCell
-            className={styles.firstItem}
-            title={"TOP-5 attractions in Vienna"}
-            description={pageDescription}
-            isPageTitle={true}
-            hasIcon={false}
-          />
-          <GridCell
-            iconColor="#F6F6F6"
-            hasArrowBorder={true}
-            title={`St. Stephen's Cathedral`}
-            hasIcon={true}
-            index={1}
-            description={
-              "Unconditionally, the main symbol of the city - the Catholic Cathedral of St. Stephen - is located in the heart of Vienna. Built in the 12th century, this majestic Gothic cathedral fascinates with rich interior decoration. Climbing the 343 steps to the top of the tower, you will be rewarded with unforgettable views of the city."
-            }
-            thumbnail={
-              process.env.NEXT_PUBLIC_API +
-              "/uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
-            }
-          />
-          <GridCell
-            iconColor="#1645ED"
-            index={2}
-            hasArrowBorder={true}
-            title={`Vienna State Opera`}
-            hasIcon={true}
-            description={
-              "A visit to Vienna is not complete without a visit to the opera. You will get the most unforgettable impressions from the performance, of course, by visiting one of the best opera houses in the world - the Vienna State Opera. The opera building, built in the Renaissance style, impresses with its elegance, but the interior is no less luxurious: marble staircases, elegant lobbies and a magnificent auditorium will not leave anyone indifferent."
-            }
-            thumbnail={
-              process.env.NEXT_PUBLIC_API +
-              "/uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
-            }
-          />
-          <GridCell
-            iconColor="#16ED2B"
-            index={3}
-            hasArrowBorder={true}
-            title={`Imperial residence Hofburg`}
-            hasIcon={true}
-            description={
-              "The Hofburg Palace Complex, the embodiment of the rich history of Austria, includes twelve palaces built in different periods, as well as many other buildings. For centuries, the Hofburg Imperial Palace has been the seat of Europe's most influential royal dynasties, including the Habsburgs and the rulers of the Holy Roman and Austro-Hungarian empires. Today, the residence of the President of Austria is located here. Three parts of the palace are open to the public: the Imperial Apartments, the Museum of Empress Sisi and the Silver Chamber."
-            }
-            thumbnail={
-              process.env.NEXT_PUBLIC_API +
-              "/uploads/banner_2ffc4ea4f3.png?updated_at=2023-02-03T18:07:58.871Z"
-            }
-          />
-        </Grid>
+      <ImageBanner
+        thumbnail={data?.data?.attributes?.banner?.data?.attributes?.url!}
+        alt={null}
+      />
+      <Container
+        display={"block"}
+        className={
+          data?.data?.attributes?.contentItems?.length! === 0
+            ? styles.markdown
+            : ""
+        }
+        verticalIndent={"medium"}
+      >
+        {data?.data?.attributes?.contentItems?.length! > 0 ? (
+          <Grid className={styles.grid} display={"grid"} col={"col-2"}>
+            <GridCell
+              className={styles.firstItem}
+              title={data?.data?.attributes?.title!}
+              description={data?.data?.attributes?.content}
+              isPageTitle={true}
+              hasIcon={false}
+            />
+            {data?.data?.attributes?.contentItems.map((contentItem, index) => (
+              <GridCell
+                iconColor={contentItem?.iconColor}
+                index={index + 1}
+                hasArrowBorder={true}
+                key={contentItem.id}
+                title={contentItem.title}
+                description={contentItem?.description}
+                isPageTitle={false}
+                hasIcon={true}
+                thumbnail={
+                  process.env.NEXT_PUBLIC_API +
+                  contentItem?.thumbnail?.data?.attributes?.url
+                }
+              />
+            ))}
+          </Grid>
+        ) : (
+          <>
+            {data?.data?.attributes?.title && (
+              <Title
+                title={data?.data?.attributes?.title!}
+                tag={"h1"}
+                align={"center"}
+              />
+            )}
+            {data?.data?.attributes?.content && (
+              <Markdown
+                className={styles.markdown}
+                content={data?.data?.attributes?.content}
+              />
+            )}
+          </>
+        )}
       </Container>
     </TemplateMain>
   );
 };
 export default Index;
+
+export async function getServerSideProps({ params }: any) {
+  const queryClient = new QueryClient();
+
+  try {
+    const { data } = await fetchPostBySlug(params.slug);
+    if (data?.length > 0) {
+      await queryClient.prefetchQuery("post", () =>
+        fetchPostById(`${data[0]?.id}`)
+      );
+    } else {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        id: data[0]?.id,
+        dehydratedState: dehydrate(queryClient),
+      },
+    };
+  } catch (err) {
+    return {
+      notFound: true,
+    };
+  }
+}

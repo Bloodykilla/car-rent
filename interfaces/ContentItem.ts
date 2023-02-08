@@ -1,4 +1,5 @@
 import { Icon } from "./Icon";
+import { Thumbnail } from "./Thumbnail";
 
 export interface ContentItem {
   id: number;
@@ -6,4 +7,5 @@ export interface ContentItem {
   description: string;
   iconColor: string;
   icon: Icon;
+  thumbnail: Thumbnail;
 }
