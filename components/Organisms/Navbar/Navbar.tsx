@@ -65,7 +65,7 @@ export const Navbar = ({}: NavbarProps) => {
           </Link>
 
           <Button href={"/car-order"} isBlueBorder={true} type={"outline"}>
-            {"Manage booking"}
+            {"Manage my booking"}
           </Button>
         </div>
       </Container>

@@ -91,8 +91,12 @@ export const GridCell = ({
           {index && !icon && <span className={styles.index}>{index}</span>}
         </div>
       )}
-      <Title tag={isPageTitle ? "h1" : "h3"} title={title} align={"left"} />
-      {description && <Markdown className={styles.markdown} content={description} />}
+      {title && (
+        <Title tag={isPageTitle ? "h1" : "h3"} title={title} align={"left"} />
+      )}
+      {description && (
+        <Markdown className={styles.markdown} content={description} />
+      )}
       {thumbnail && (
         <div className={styles.imageContainer}>
           <Image

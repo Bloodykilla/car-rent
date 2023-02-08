@@ -9,6 +9,14 @@
 }
 
 .bottomText {
+  a {
+    color: $color--grey;
+
+    &:hover {
+      color: $color--primary;
+      transition: $transition--default;
+    }
+  }
   max-width: 996px;
   margin: 2.5rem auto 0;
 
