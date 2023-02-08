@@ -12,7 +12,7 @@ export const VideoBlock = ({}: VideoBlockProps) => {
         controls={true}
         url="https://www.youtube.com/watch?v=_4yaQf5AHHY&t=1s&ab_channel=CaretaRentacar"
         width="100%"
-        light={"/images/player.jpg"}
+        light={"/images/player.webp"}
         height={"100%"}
         playIcon={<PlayIcon />}
       />

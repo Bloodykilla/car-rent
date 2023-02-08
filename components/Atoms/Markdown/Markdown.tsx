@@ -1,5 +1,6 @@
 import { sanitize } from "isomorphic-dompurify";
 import Image from "next/image";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import styles from "./styles.module.scss";
@@ -18,8 +19,13 @@ export const Markdown = ({ content, className }: MarkdownProps) => {
       components={{
         img: ({ src, alt }) => {
           return (
-            <div>
-              <Image src={src!} alt={alt!} />
+            <div className={styles.imageContainer}>
+              <Image
+                className={styles.image}
+                fill
+                src={process.env.NEXT_PUBLIC_API + src!}
+                alt={alt!}
+              />
             </div>
           );
         },
@@ -30,20 +36,20 @@ export const Markdown = ({ content, className }: MarkdownProps) => {
             (href && !href.includes(process.env.NEXT_PUBLIC_SITE as string))
           ) {
             return (
-              <a
+              <Link
                 {...linkProps}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={href}
               >
                 {children}
-              </a>
+              </Link>
             );
           }
           return (
-            <a {...linkProps} href={href}>
+            <Link {...linkProps} href={href!}>
               {children}
-            </a>
+            </Link>
           );
         },
       }}
