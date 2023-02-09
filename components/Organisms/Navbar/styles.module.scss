@@ -28,7 +28,7 @@
   display: block;
 
   @include for-phone-only {
-    margin: 0 1.375rem 0 0;
+    margin: 0 .875em 0 0;
   }
 
   @include for-tablet-portrait-up {

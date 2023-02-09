@@ -2,8 +2,8 @@
 
 .container {
   @include for-phone-only {
-    width: 65px;
-    height: 21px;
+    width: 56px;
+    height: 18px;
   }
 
   @include for-tablet-portrait-up {

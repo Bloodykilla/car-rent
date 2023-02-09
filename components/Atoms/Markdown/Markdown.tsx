@@ -19,14 +19,14 @@ export const Markdown = ({ content, className }: MarkdownProps) => {
       components={{
         img: ({ src, alt }) => {
           return (
-            <div className={styles.imageContainer}>
+            <span className={styles.imageContainer}>
               <Image
                 className={styles.image}
                 fill
                 src={process.env.NEXT_PUBLIC_API + src!}
                 alt={alt!}
               />
-            </div>
+            </span>
           );
         },
         a: ({ node, children, href, ...props }) => {
