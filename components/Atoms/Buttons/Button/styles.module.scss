@@ -12,7 +12,7 @@
   transition: $transition--default;
 
   @include for-phone-only {
-    padding: 5px 16px;
+    padding: 6px 14px;
     font-size: $font-size--small;
   }
   @include for-tablet-portrait-up {
